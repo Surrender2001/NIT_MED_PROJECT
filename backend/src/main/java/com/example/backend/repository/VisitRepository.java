@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.*;
 
 public interface VisitRepository extends JpaRepository<Visit, Long> {
 
-    List<Visit> findByPatient_Id(Long id);
+    List<Visit> findByPatient_IdOrderByIdDesc(Long id);
 
     List<Visit> findByDoctor_Id(Long id);
 

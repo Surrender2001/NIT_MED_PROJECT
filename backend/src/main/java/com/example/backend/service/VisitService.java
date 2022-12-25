@@ -20,7 +20,7 @@ public class VisitService {
 
     @Transactional
     public List<Visit> getAllVisitsByPatientId(Long patientId) {
-        return visitRepository.findByPatient_Id(patientId);
+        return visitRepository.findByPatient_IdOrderByIdDesc(patientId);
     }
 
     @Transactional

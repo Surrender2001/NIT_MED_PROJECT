@@ -21,4 +21,6 @@ public class Visit {
 
     private Doctor doctor;
 
+    private Boolean isVisited;
+
 }

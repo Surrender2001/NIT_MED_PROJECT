@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/patient")
+@CrossOrigin("http://localhost:3000")
 public class PatientController {
 
     private final PatientService patientService;

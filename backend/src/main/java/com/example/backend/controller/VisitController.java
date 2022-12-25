@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/visit")
+@CrossOrigin("http://localhost:3000")
 public class VisitController {
 
     private final VisitService visitService;

@@ -1,23 +1,25 @@
 import React, {FC, useState} from 'react';
 import {Layout, Menu} from 'antd';
 import {MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined} from '@ant-design/icons';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import './App.css';
 import 'antd/es/locale/ru_RU';
 import {ItemType} from "antd/es/menu/hooks/useItems";
 import {PatientView} from "./components/PatientView";
+import {EntryEdit} from "./components/EntryEdit";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const App: FC = () => {
 
   const [collapsed, setCollapsed] = useState(true);
+  const navigate = useNavigate()
 
  const menu: ItemType[] = [
     {
       key: 'patient',
       icon: <UserOutlined />,
-      label: 'Посещения',
+      label: 'Пациент',
     },
   ]
 
@@ -43,12 +45,13 @@ const App: FC = () => {
             bottom: 0,
           }}
         >
-          {/*<Menu*/}
-          {/*  theme="dark"*/}
-          {/*  mode="inline"*/}
-          {/*  defaultSelectedKeys={['patient']}*/}
-          {/*  items={menu}*/}
-          {/*/>*/}
+          <Menu
+            onClick={(e) => navigate(`/${e.key}`)}
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={['patient']}
+            items={menu}
+          />
         </Sider>
         <Layout className="site-layout" style={collapsed ? { marginLeft: 80 } : { marginLeft: 200 }}>
 
@@ -62,6 +65,8 @@ const App: FC = () => {
           >
             <Routes>
               <Route path="*" element={<PatientView/>}/>
+                <Route path="/entry/:id" element={<EntryEdit/>}/>
+
               {/*<Route path={applicationListPath()} element={<RequireAdminAuth><ApplicationList /></RequireAdminAuth> } />*/}
               {/*<Route path={adminApplicationListPath()} element={<RequireAdminAuth><AdminApplicationList /></RequireAdminAuth>} />*/}
               {/*<Route path={userApplicationListPath()} element={<UserApplicationList />} />*/}
