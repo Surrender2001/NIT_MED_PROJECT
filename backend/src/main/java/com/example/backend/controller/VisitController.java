@@ -40,12 +40,15 @@ public class VisitController {
     public ResponseEntity<List<Visit>> getAllVisits(
         @RequestParam(value = "patientId", required = false) Long patientId,
         @RequestParam(value = "doctorId", required = false) Long doctorId,
-        LocalDate dateOfReceipt
+        @RequestParam(value = "dateOfReceipt", required = false) LocalDate dateOfReceipt
     ) {
         try {
-            if (patientId != null) {
+            if (patientId != null && doctorId == null && dateOfReceipt == null) {
                 return ResponseEntity.ok(entityToDtoMapper.mapEntityVisitListToDto(
                     visitService.getAllVisitsByPatientId(patientId)));
+            } else if (patientId == null && doctorId != null && dateOfReceipt != null) {
+                return ResponseEntity.ok(entityToDtoMapper.mapEntityVisitListToDto(
+                    visitService.getAllVisitsByDoctorIdAndDateOfReceipt(doctorId, dateOfReceipt)));
             }
             return ResponseEntity.ok(entityToDtoMapper.mapEntityVisitListToDto(
                 visitService.getAllVisitsByDoctorId(doctorId)));

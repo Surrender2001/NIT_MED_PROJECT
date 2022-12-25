@@ -10,7 +10,7 @@ export class DoctorService extends RestApiService {
                 professionId: professionId
             }
         }
-        return this.http.get<Doctor[]>('/doctor',request);
+        return this.http.get<Doctor[]>('/doctor', request);
     }
 
 }

@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Button, Card, Col, DatePicker, Form, Modal, Row, Select, Space} from 'antd';
+import {Button, Card, Col, DatePicker, DatePickerProps, Form, Modal, Row, Select, Space} from 'antd';
 import {useParams} from "react-router-dom";
 import {getProfessionSelectors} from "../utils/Selectors";
 import {Doctor} from "../dto/Doctor";
@@ -14,32 +14,43 @@ const {Item} = Form;
 
 export const EntryEdit: FC = () => {
     const workingHours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-    const patientId = useParams();
+    const patientId = useParams<{ id?:string |undefined}>();
     const [professionId, setProfessionId] = useState(undefined);
+    const [doctorId, setDoctorId] = useState(-1);
     const [professionSelectors, setProfessionSelectors] = useState(new Array());
     const [loading, setLoading] = useState(true);
-    const [updateNeeded, setUpdateNeeded] = useState(false);
+    const [updateDoctorsNeeded, setUpdateDoctorsNeeded] = useState(false);
+    const [updateVisitsNeeded, setUpdateVisitsNeeded] = useState(false);
     const [doctors, setDoctors] = useState<Doctor[]>(new Array());
     const [isDisabled, setIsDisabled] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [dateOfReceipt, setDateOfReceipt] = useState<string | undefined>(undefined);
     const [visits, setVisits] = useState<Visit[]>(new Array());
     useEffect(() => {
         getProfessionSelectors().then(result => setProfessionSelectors(result)).finally(() => setLoading(false))
     }, []);
     useEffect(() => {
-        updateNeeded && getDoctors(professionId);
-    }, [updateNeeded]);
+        updateDoctorsNeeded && getDoctors(professionId);
+    }, [updateDoctorsNeeded]);
+    useEffect(() => {
+        updateVisitsNeeded && getVisits(doctorId);
+    }, [updateVisitsNeeded]);
 
-    const showModal = () => {
+    const handleSignUp = (doctorId: number) => {
+        if (dateOfReceipt === undefined) {
+            MessageService.warn('Выберете дату приёма');
+            return;
+        }
+        setDoctorId(doctorId);
+        setUpdateVisitsNeeded(true);
         setIsModalOpen(true);
-
     };
 
     const getVisits = (doctorId: number) => {
         setLoading(true);
-        VisitService.getVisits(doctorId).then(result => setVisits(result.data)).finally(() => {
+        VisitService.getVisits(undefined, doctorId, dateOfReceipt).then(result => setVisits(result.data)).finally(() => {
             setLoading(false);
-            setUpdateNeeded(false)
+            setUpdateVisitsNeeded(false)
         });
     }
 
@@ -53,23 +64,42 @@ export const EntryEdit: FC = () => {
     };
     const getDoctors = (professionId?: number) => {
         setLoading(true);
-        console.log(professionId)
         DoctorService.getDoctors(professionId).then(result => setDoctors(result.data)).finally(() => {
             setLoading(false);
-            setUpdateNeeded(false)
+            setUpdateDoctorsNeeded(false)
         });
     }
     const handleGetDoctors = (value: any, option: (DefaultOptionType | DefaultOptionType[])) => {
         setProfessionId(value);
-        console.log(value)
         setIsDisabled(false)
-        // getVisits(value);
-        setUpdateNeeded(true);
+        setUpdateDoctorsNeeded(true);
     }
+    const hangleCheckDisable = (hour: number, visits: Visit[]) => {
+        for (let i = 0; i < visits.length; i++) {
+            if (visits[i].startHour === hour) {
+                return true;
+            }
+        }
+        return false;
+    };
+    const onDateChange: DatePickerProps['onChange'] = (date, dateString) => {
+        setDateOfReceipt(dateString === '' ? undefined : dateString);
+        console.log(dateOfReceipt)
+    }
+
+    const handleCreateEntry = (doctorId: number, dateOfReceipt: string | undefined, hour: number) => {
+        setLoading(true);
+        VisitService.addVisit({
+            patientId: Number(patientId.id),
+            doctorId: doctorId,
+            dateOfReceipt: dateOfReceipt,
+            startHour: hour,
+        } as Visit).then(() => MessageService.success())
+            .then(()=>setUpdateVisitsNeeded(true))
+            .finally(() => setLoading(false));
+    };
     return (
         <>
-
-
             <Card title={'Запись к врачу'}>
                 <Row gutter={32}>
                     <Col span={4}>
@@ -84,7 +114,7 @@ export const EntryEdit: FC = () => {
                             </Select>
                         </Card>
                         <Card title={'Дата приёма'}>
-                            <DatePicker placeholder={"Выберете дату"} disabled={isDisabled}/>
+                            <DatePicker placeholder={"Выберете дату"} disabled={isDisabled} onChange={onDateChange}/>
                         </Card>
                     </Col>
                     <Col span={20}>
@@ -96,7 +126,8 @@ export const EntryEdit: FC = () => {
                                             <Space direction={'vertical'} size={"large"}>
                                                 <div>Специальность {doctor.profession?.profession}</div>
                                                 <div>
-                                                    <Button type="primary" onClick={showModal}>Записаться</Button>
+                                                    <Button type="primary"
+                                                            onClick={() => handleSignUp(doctor.id)}>Записаться</Button>
                                                 </div>
                                             </Space>
                                         </Card>
@@ -109,15 +140,29 @@ export const EntryEdit: FC = () => {
                     </Col>
                 </Row>
             </Card>
-            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                {/*{visits.length > 0 && workingHours.map((hour)=>{*/}
-                {/*    <Button type={'primary'} disabled={}></Button>*/}
-
-                {/*})*/}
-                {/*}*/}
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+            <Modal title="Выберете час приёма"
+                   open={isModalOpen}
+                   onOk={handleOk}
+                   onCancel={handleCancel}
+                   footer={[]}
+                   centered
+                   style={{textAlign: 'center'}}
+            >
+                <br/>
+                <Row gutter={[32, 32]}>
+                    {
+                        workingHours.map(hour =>
+                            <Col span={8}>
+                                <Button type={'primary'}
+                                        disabled={hangleCheckDisable(hour, visits)}
+                                        onClick={() => handleCreateEntry(doctorId, dateOfReceipt, hour)}
+                                >
+                                    {hour}:00
+                                </Button>
+                            </Col>
+                        )
+                    }
+                </Row>
             </Modal>
         </>
     );

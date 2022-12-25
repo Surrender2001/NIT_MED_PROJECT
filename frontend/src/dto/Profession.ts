@@ -1,5 +1,5 @@
 export interface Profession {
-  id: number;
-  profession?: string;
+    id: number;
+    profession?: string;
 
 }

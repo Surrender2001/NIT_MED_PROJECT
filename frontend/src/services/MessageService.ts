@@ -5,4 +5,7 @@ export class MessageService {
         message.success('Выполнено успешно');
     }
 
+    static warn(text: string) {
+        message.warning(text);
+    }
 }

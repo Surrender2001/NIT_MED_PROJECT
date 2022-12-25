@@ -6,6 +6,7 @@ import {VisitService} from "../services/VisitService";
 import {Visit} from "../dto/Visit";
 import {MessageService} from "../services/MessageService";
 import {useCreateEntry} from "../utils/Hooks";
+import {CheckCircleTwoTone} from "@ant-design/icons";
 
 export const PatientView: FC = () => {
     const [patientSelectors, setPatientSelectors] = useState(new Array());
@@ -40,7 +41,7 @@ export const PatientView: FC = () => {
     }
 
 
-    const handleSetVisited = (id: number) => {
+    const handleSetVisited = (id?: number) => {
         VisitService.setVisited(id).then(() => MessageService.success())
             .finally(() => setUpdateNeeded(true));
     }
@@ -57,9 +58,9 @@ export const PatientView: FC = () => {
                     >
                         {patientSelectors}
                     </Select>
-                    <Button type="primary" disabled={isDisabled} onClick={()=>createEntry(patientId)}>Записаться</Button>
+                    <Button type="primary" disabled={isDisabled}
+                            onClick={() => createEntry(patientId)}>Записаться</Button>
                 </Space>
-
             </Card>
             <Card title='Посещения' loading={loading}>
                 <Row gutter={[32, 32]}>
@@ -70,11 +71,17 @@ export const PatientView: FC = () => {
                                     <div>Начало в {visit.startHour}:00</div>
                                     <div> Лечащий
                                         врач {visit.doctor?.lastName} {visit.doctor?.firstName} {visit.doctor?.middleName}</div>
-                                    <div><Button type="primary" disabled={visit.isVisited} onClick={() => {
-                                        handleSetVisited(visit.id)
-                                    }}>{visit.isVisited ? 'Посетил' : 'Отметиться'}</Button></div>
+                                    <div>
+                                        {visit.isVisited ?
+                                            <CheckCircleTwoTone title={"Посетил"}/> :
+                                            <Button type="primary" disabled={visit.isVisited}
+                                                    onClick={() => {
+                                                        handleSetVisited(visit.id)
+                                                    }}>
+                                                Отметиться
+                                            </Button>}
+                                    </div>
                                 </Space>
-
                             </Card>
                         </Col>
                     )}

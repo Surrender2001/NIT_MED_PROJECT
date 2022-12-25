@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4322500b-99a3-4483-ab36-97fa3acd6be7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/dto/Profession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/ProfessionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/ProfessionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Profession.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/DoctorService.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ProfessionService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/mapper/EntityToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/mapper/EntityToDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EntryEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PatientView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PatientView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dto/Doctor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Doctor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/Patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Patient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/Profession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Profession.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/Visit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Visit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/DoctorService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DoctorService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/MessageService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MessageService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/PatientService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PatientService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProfessionService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProfessionService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/RestApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/RestApiService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/VisitService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VisitService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Hooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Hooks.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Selectors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Selectors.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,22 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Study/Course4/СИТ/NIT_fnal_project/frontend/src/services",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "E:\\Study\\Course4\\СИТ\\NIT_fnal_project\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Study/Course4/СИТ/NIT_fnal_project/frontend/src/services&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\Study\\Course4\\СИТ\\NIT_fnal_project\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -84,6 +95,7 @@
       <workItem from="1671938602679" duration="1580000" />
       <workItem from="1671941136333" duration="5403000" />
       <workItem from="1671948266296" duration="11286000" />
+      <workItem from="1671964324072" duration="7077000" />
     </task>
     <servers />
   </component>

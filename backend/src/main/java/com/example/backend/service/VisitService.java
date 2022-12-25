@@ -1,5 +1,6 @@
 package com.example.backend.service;
 
+import java.time.*;
 import java.util.*;
 
 import com.example.backend.entity.*;
@@ -26,6 +27,11 @@ public class VisitService {
     @Transactional
     public List<Visit> getAllVisitsByDoctorId(Long doctorId) {
         return visitRepository.findByDoctor_Id(doctorId);
+    }
+
+    @Transactional
+    public List<Visit> getAllVisitsByDoctorIdAndDateOfReceipt(Long doctorId, LocalDate dateOfReceipt) {
+        return visitRepository.findByDoctor_IdAndDateOfReceipt(doctorId,dateOfReceipt);
     }
 
     @Transactional

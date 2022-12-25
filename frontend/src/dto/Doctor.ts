@@ -1,12 +1,12 @@
 import {Profession} from "./Profession";
 
 export interface Doctor {
-  id: number;
-  lastName?: string;
-  firstName?: string;
-  middleName?: string;
-  professionId?: number;
+    id: number;
+    lastName?: string;
+    firstName?: string;
+    middleName?: string;
+    professionId?: number;
 
-  profession?: Profession;
+    profession?: Profession;
 
 }

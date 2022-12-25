@@ -7,7 +7,7 @@ import {useNavigate} from 'react-router-dom';
 // };
 
 export const useCreateEntry = () => {
-  const navigate = useNavigate();
-  return (patientId: number) => navigate(`entry/${patientId}`);
+    const navigate = useNavigate();
+    return (patientId: number) => navigate(`entry/${patientId}`);
 };
 
