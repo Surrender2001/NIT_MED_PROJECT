@@ -1,0 +1,171 @@
+@import '~antd/dist/';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.inline-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ant-menu-item:first-child {
+  margin-top: 0;
+}
+
+.ant-modal-body .ant-picker {
+  width: 100%;
+}
+
+.control-buttons {
+  margin-top: 16px;
+}
+
+.control-buttons button:not(:first-child) {
+  margin-left: 16px;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.ant-descriptions:not(.ant-descriptions-bordered) .ant-descriptions-row:last-child > td {
+  padding-bottom: 0;
+}
+
+.ant-card:not(:first-child), .ant-card-body > .ant-row:not(:first-child) {
+  margin-top: 16px;
+}
+
+[data-theme='compact'] .site-navigation-steps,
+.site-navigation-steps {
+  margin-bottom: 16px;
+  box-shadow: 0 -1px 0 0 #e8e8e8 inset;
+}
+
+.ant-descriptions-item-label {
+  font-weight: bold;
+}
+
+.ant-input-number, .ant-input-number-group-wrapper {
+  width: 100%;
+}
+
+.dynamic-delete-button {
+  top: 4px;
+  margin: 0 8px;
+  color: #999;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+.ant-tabs-tab-btn span {
+  outline: none;
+  transition: all 0.3s;
+}
+
+.ant-tabs-tab > .ant-badge span {
+  color: rgba(0, 0, 0, .85);
+}
+
+.ant-tabs-tab:hover span {
+  color: #40a9ff;
+}
+
+.ant-tabs-tab-btn:focus span, .ant-tabs-tab-remove:focus span, .ant-tabs-tab-btn:active span, .ant-tabs-tab-remove:active span {
+  color: #096dd9;
+}
+
+.embedded-table .ant-table {
+  margin: 0 !important;
+}
+
+.centered-table .ant-table-cell {
+  text-align: center;
+}
+
+.notifications-icon {
+  cursor: pointer;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.notifications-icon .ant-avatar {
+  background-color: white;
+  box-shadow: rgb(149 157 165 / 20%) 0 8px 24px;
+}
+
+.notification {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+}
+
+.notification-notice {
+  width: 100%;
+  margin-bottom: 16px;
+  margin-left: auto;
+  padding: 16px 24px;
+  overflow: hidden;
+  line-height: 1.5715;
+  word-wrap: break-word;
+  background: #fff;
+  border-radius: 2px;
+  border: solid 1px rgba(27, 31, 35, 0.15);
+}
+
+.notification-notice-icon {
+  float: left;
+  margin-left: 4px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #52c41a;
+}
+
+.notification-notice-message {
+  margin-bottom: 4px;
+  margin-left: 48px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 24px;
+}
+
+.notification-notice-description {
+  margin-left: 48px;
+  font-size: 14px;
+}
+
+.obligation-colored-row {
+  background-color: #afabab
+}
+
+.obligation-not-colored-row {
+  background-color: #ffffff
+}
+
+hr {
+  margin: 3px 0;
+  opacity: 20%;
+}

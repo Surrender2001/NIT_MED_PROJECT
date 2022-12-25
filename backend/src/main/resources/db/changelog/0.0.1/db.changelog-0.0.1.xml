@@ -1,0 +1,73 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+    <changeSet id="1671875350749-1" author="msi (generated)">
+        <createTable tableName="doctor">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_doctor"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="middle_name" type="VARCHAR(255)"/>
+            <column name="profession_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1671875350749-2" author="msi (generated)">
+        <createTable tableName="patient">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_patient"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="middle_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1671875350749-3" author="msi (generated)">
+        <createTable tableName="profession">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_profession"/>
+            </column>
+            <column name="profession" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1671875350749-4" author="msi (generated)">
+        <createTable tableName="visit">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_visit"/>
+            </column>
+            <column name="date_of_receipt" type="DATE"/>
+            <column name="start_hour" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_visited" type="BOOLEAN"/>
+            <column name="patient_id" type="BIGINT"/>
+            <column name="doctor_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1671875350749-5" author="msi (generated)">
+        <addForeignKeyConstraint baseColumnNames="profession_id"
+                                 baseTableName="doctor"
+                                 constraintName="FK_DOCTOR_ON_PROFESSION"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profession"/>
+    </changeSet>
+    <changeSet id="1671875350749-6" author="msi (generated)">
+        <addForeignKeyConstraint baseColumnNames="doctor_id"
+                                 baseTableName="visit"
+                                 constraintName="FK_VISIT_ON_DOCTOR"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doctor"/>
+    </changeSet>
+    <changeSet id="1671875350749-7" author="msi (generated)">
+        <addForeignKeyConstraint baseColumnNames="patient_id"
+                                 baseTableName="visit"
+                                 constraintName="FK_VISIT_ON_PATIENT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patient"/>
+    </changeSet>
+</databaseChangeLog>
