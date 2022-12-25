@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4322500b-99a3-4483-ab36-97fa3acd6be7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/EntryEdit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Doctor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Patient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/Visit.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/MessageService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/PatientService.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/RestApiService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/VisitService.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Hooks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Selectors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/dto/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/dto/Visit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/VisitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/VisitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/repository/VisitRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/VisitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/dto/Profession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/controller/ProfessionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/service/ProfessionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/Profession.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/DoctorService.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ProfessionService.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/mapper/EntityToDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/example/backend/api/mapper/EntityToDtoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PatientView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PatientView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EntryEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/Doctor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Doctor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Selectors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Selectors.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Study/Course4/СИТ/NIT_fnal_project/frontend/src/utils",
+    "last_opened_file_path": "E:/Study/Course4/СИТ/NIT_fnal_project/frontend/src/services",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,10 +66,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\utils" />
-      <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\components" />
       <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\services" />
       <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\dto" />
+      <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\utils" />
+      <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src\components" />
       <recent name="E:\Study\Course4\СИТ\NIT_fnal_project\frontend\src" />
     </key>
   </component>
@@ -92,7 +83,7 @@
       <updated>1671938601357</updated>
       <workItem from="1671938602679" duration="1580000" />
       <workItem from="1671941136333" duration="5403000" />
-      <workItem from="1671948266296" duration="4981000" />
+      <workItem from="1671948266296" duration="11286000" />
     </task>
     <servers />
   </component>

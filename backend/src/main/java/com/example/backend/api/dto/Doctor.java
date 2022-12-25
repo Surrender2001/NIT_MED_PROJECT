@@ -17,4 +17,6 @@ public class Doctor {
 
     private Long professionId;
 
+    private Profession profession;
+
 }

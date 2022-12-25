@@ -2,6 +2,8 @@ import React, {ReactElement} from 'react';
 import {Select} from 'antd';
 import {Patient} from "../dto/Patient";
 import {PatientService} from "../services/PatientService";
+import {ProfessionService} from "../services/ProfessionService";
+import {Profession} from "../dto/Profession";
 
 const { Option } = Select;
 
@@ -31,20 +33,18 @@ export const getPatientSelectors = async () => {
 export const getProfessionSelectors = async () => {
   // eslint-disable-next-line @typescript-eslint/no-array-constructor
   let professionSelectors = new Array();
-  let professions: Patient[] = [];
-  await PatientService.getPatients()
+  let professions: Profession[] = [];
+  await ProfessionService.getProfessions()
     .then(response => {
-      professions = response.data.map(man => {
+      professions = response.data.map(pro => {
         return {
-          id: man.id,
-          lastName: man.lastName || '',
-          firstName: man.firstName || '',
-          middleName: man.middleName || ''
-        } as Patient;
+          id: pro.id,
+          profession: pro.profession,
+        } as Profession;
       });
     })
     .finally(() => professionSelectors = Array.from(professions)
-    .map((m) => createCustomOption(String(m.id), `${m.lastName} ${m.firstName} ${m.middleName}`)));
+    .map((pro) => createCustomOption(String(pro.id), `${pro.profession}`)));
   return professionSelectors;
 };
 

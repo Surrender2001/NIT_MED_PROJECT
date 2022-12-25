@@ -14,5 +14,6 @@ public interface EntityToDtoMapper {
     List<Doctor> mapEntityDoctorListToDto(List<com.example.backend.entity.Doctor> doctorList);
 
     List<Visit> mapEntityVisitListToDto(List<com.example.backend.entity.Visit> visitList);
+    List<Profession> mapEntityProfessionListToDto(List<com.example.backend.entity.Profession> professionList);
 
 }
