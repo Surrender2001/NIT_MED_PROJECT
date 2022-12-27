@@ -6,27 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4322500b-99a3-4483-ab36-97fa3acd6be7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EntryEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EntryEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PatientView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PatientView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Doctor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Doctor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Patient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Patient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Profession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Profession.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/Visit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/Visit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/DoctorService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/DoctorService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/MessageService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/MessageService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/PatientService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PatientService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProfessionService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProfessionService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/RestApiService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/RestApiService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/VisitService.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/VisitService.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Hooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Hooks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Selectors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Selectors.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +75,9 @@
       <workItem from="1671941136333" duration="5403000" />
       <workItem from="1671948266296" duration="11286000" />
       <workItem from="1671964324072" duration="7077000" />
+      <workItem from="1672049080130" duration="2000" />
+      <workItem from="1672096507426" duration="97000" />
+      <workItem from="1672099008778" duration="43000" />
     </task>
     <servers />
   </component>
